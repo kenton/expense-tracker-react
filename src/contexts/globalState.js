@@ -15,8 +15,8 @@ const initialState = {
 // create context
 export const GlobalContext = createContext(initialState);
 
-// provider component
 /**
+ * provider component
  * this component is going to wrap our other components, so we're passing in 'children' as a prop
  * here to use within this function.
  *  */
