@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { GlobalContext } from  '../contexts/globalState';
 
 export const Balance = () => {
+  const {transactions} = useContext(GlobalContext);
+
+  const totalBalance = transactions
+                        .reduce((sum, el) => sum += el.amount, 0)
+                        .toFixed(2);
+
   return (
     <>
       <h4>Your Balance</h4>
-      <h1>$0.00</h1>
+      <h1>${totalBalance}</h1>
     </>
   )
 }
